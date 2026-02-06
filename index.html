@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mon site</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/style.css">
+  </head>
+
+  <body>
+
+    <div class="animation-box">
+      <h1>Les émotions sont ce qui nous rend humains. Sans elles, nous ne sommes rien...</h1>
+    </div>
+
+    <section class="landing" id="landing">
+      <div class="link-container">
+        <a class="scroll-anim" id="nostalgie" href="#page-1">Nostalgie</a>
+        <a class="scroll-anim" id="tristesse" href="#page-2">Tristesse</a>
+        <a class="scroll-anim" id="peur" href="#page-3">Peur</a>
+      </div>
+    </section>
+
+
+    <section id="page-1">
+      <h2>Deuxième page</h2>
+      <p>Contenu qui apparaît quand tu scroll</p>
+    </section>
+
+
+    <section id="page-2">
+      <h2>Tristesse</h2>
+    <audio id="sadness-effect" loop>
+    <source src="/creative-project/public/audio/sadness-effect.mp3" type="audio/mpeg">
+    </audio> 
+    </section>
+
+
+    <section id="page-3">
+      <h2>Quatrième page</h2>
+    </section>
+
+    <script type="module" src="/creative-project/src/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  </body>
+</html>
