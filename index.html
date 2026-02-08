@@ -6,42 +6,109 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="src/style.css">
+    <link rel="icon" href="data:,">
   </head>
 
   <body>
-
+<!-- Animation du début -->
     <div class="animation-box">
       <h1>Les émotions sont ce qui nous rend humains. Sans elles, nous ne sommes rien...</h1>
     </div>
 
+  <!-- Landing Page -->
     <section class="landing" id="landing">
       <div class="link-container">
-        <a class="scroll-anim" id="nostalgie" href="#page-1">Nostalgie</a>
-        <a class="scroll-anim" id="tristesse" href="#page-2">Tristesse</a>
-        <a class="scroll-anim" id="peur" href="#page-3">Peur</a>
+        <a class="scroll-anim play-nostalgia" id="nostalgie" href="#page-1">Nostalgie</a>
+        <a class= "scroll-anim play-sad" href="#page-2">Tristesse</a>
+        <a class="scroll-anim play-ambiance" id="peur" href="#page-3">Peur</a>
       </div>
     </section>
 
+ <!--  Page Nostalgie  -->
+<section id="page-1">
+  <div class="link-navigation">
+    <a class="scroll-anim stop-nostalgia" href="#landing">Précédent</a>
 
-    <section id="page-1">
-      <h2>Deuxième page</h2>
-      <p>Contenu qui apparaît quand tu scroll</p>
-    </section>
+    <div class="nostalgia-box" id="nostalgia-box">
+      <audio id="nostalgia-sfx" loop>
+        <source src="/nostalgie.mp3" type="audio/mpeg">
+      </audio>
+
+      <div class="years" id="years">
+        <div class="year">2026</div>
+      </div>
 
 
-    <section id="page-2">
-      <h2>Tristesse</h2>
-    <audio id="sadness-effect" loop>
-    <source src="/creative-project/public/audio/sadness-effect.mp3" type="audio/mpeg">
-    </audio> 
-    </section>
+      <div class="old-cartoon" id="old-cartoon">
+        <video autoplay muted loop playsinline>
+          <source src="/cartoon-old.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <a class="scroll-anim play-sad stop-nostalgia" href="#page-2">Suivant</a>
+  </div>
+</section>
 
 
-    <section id="page-3">
-      <h2>Quatrième page</h2>
-    </section>
+ <!--  Page Tristesse  -->
+<section id="page-2">
+  <audio id="sadness-effect">
+    <source src="/sadness-effect.mp3" type="audio/mpeg">
+  </audio> 
 
-    <script type="module" src="/creative-project/src/main.js"></script>
+  <p class="sad-text">
+    <em>« Quand on est seul, on commence à se demander si on existe vraiment. »</em>
+  </p>
+
+
+  <canvas id="pg-2"></canvas>
+
+
+  <img class="naruto-scale" src="./src/assets/naruto-scale.png" alt="Naruto" />
+
+  <div class="link-navigation">
+    <a class="scroll-anim stop-sadness play-nostalgia" href="#page-1">Précédent</a>
+    <a class="scroll-anim stop-sadness play-ambiance" href="#page-3">Suivant</a>
+  </div>
+</section>
+
+
+ <!--  Page Peur  -->
+
+<section id="page-3">
+
+    <div class="link-navigation">
+    <a class="scroll-anim play-sad stop-ambiance" href="#page-2">Précédent</a>
+      <div class="text-peur">
+        <P>Sans bougez la tête suivez la balle rouge </P>
+      </div>
+    <canvas id="pg-3"></canvas>
+    <a class="scroll-anim stop-ambiance" href="#landing">Accueil</a>
+  </div>
+
+
+
+  <div class="red-ball"></div>
+
+  <audio id="heart-sfx" loop>
+    <source src="/heart.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="sound-ambience" loop>
+    <source src="public/heart.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="tkt-sfx">
+  <source src="/tkt.mp3" type="audio/mpeg">
+  </audio>
+
+
+
+  <img id="reveal" src="src/assets/tktimg.jpg" alt="tktimg" />
+</section>
+
+    <script type="module" src="./src/main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   </body>
 </html>

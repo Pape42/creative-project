@@ -1,3 +1,5 @@
+
+/* Styles Global */
 * {
   box-sizing: border-box;
   padding: 0;
@@ -7,6 +9,28 @@
 html {
   scroll-behavior: smooth;
 }
+
+
+
+/* Firefox */
+html {
+  scrollbar-width: none;
+}
+
+/* IE */
+body {
+  -ms-overflow-style: none;
+}
+
+/* Chrome, Safari, Opera */
+body::-webkit-scrollbar,
+body::-webkit-scrollbar-button {
+  display: none;
+}
+
+
+
+
 
 body {
   background-color: #071726;
@@ -25,6 +49,7 @@ section {
   padding: 60px 20px;
 }
 
+/* Landing Page */
 
 .landing {
   position: relative;
@@ -33,7 +58,6 @@ section {
   background-size: cover;
   background-position: center;
 }
-
 
 .link-container {
   height: 100%;
@@ -65,8 +89,40 @@ section {
 
 .link-container a:hover {
   color: yellow;
+  transform: scale(1.1);
 }
 
+.link-navigation{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+  justify-content: center;
+  align-items: center;
+}
+
+.link-navigation a {
+  text-decoration: none;
+  font-size: 3rem;
+  color: #fff;
+  text-align: center;
+}
+
+.link-navigation a:nth-child(1) { 
+  animation-delay: 0s; 
+}
+.link-navigation a:nth-child(2) { 
+  animation-delay: 1s; 
+}
+.link-navigation a:nth-child(3) { 
+  animation-delay: 2s; 
+}
+
+.link-navigation a:hover {
+  color: yellow;
+  transform: scale(1.1);
+}
 
 .animation-box {
   position: fixed;      
@@ -98,30 +154,6 @@ section {
   width: min(1000px, 90%);
 }
 
-
-audio {
-  position: absolute;
-  width: 0;
-  height: 0;
-  opacity: 0;
-  pointer-events: none;
-}
-
-
-
-
-@keyframes animationLink {
-  0% { 
-    transform: scale(1);
-   }
-  50% { 
-    transform: scale(1.1); 
-  }
-  100% { 
-    transform: scale(1); 
-  }
-}
-
 @keyframes animationStart {
   0%   { 
     opacity: 1; 
@@ -136,3 +168,267 @@ audio {
     visibility: hidden; 
   }
 }
+
+
+@keyframes animationLink {
+  0% { 
+    transform: scale(1);
+   }
+  50% { 
+    transform: scale(1.1); 
+  }
+  100% { 
+    transform: scale(1); 
+  }
+}
+
+/* Page 1 Nostalgie */
+#page-1 {
+  background: url("./assets/bg-nostalgie.jpg");
+  background-size: cover;
+  background-position: center;  
+}
+
+
+.nostalgia-box{
+  width: min(900px, 92%);
+  background: rgba(255,255,255,0.65);
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.18);
+}
+
+.nostalgia-text{
+  font-family: "Noto Sans", sans-serif;
+  color: #2d2420;
+  opacity: .8;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.years{
+  height: 260px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+}
+
+.year{
+  font-size: 6rem;
+  text-align: center;
+  color: #2d2420;
+  opacity: .35;
+  transform: translateY(var(--shift, 0px));
+  transition: opacity .25s ease, transform .1s linear;
+  margin-top: 155px;
+}
+
+.year.active{
+  opacity: 1;
+}
+
+
+
+.nostalgia-box{
+  position: relative;
+  width: min(1000px, 95%);
+  min-height: 500px;
+  overflow: hidden;
+}
+
+
+.old-cartoon{
+  position: absolute;
+  inset: 0;
+  display: none;
+}
+
+.old-cartoon.show{
+  display: block;
+}
+
+.old-cartoon video{
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+
+/* Page 2  Tristesse */
+
+#page-2{
+  position: relative;
+  min-height: 100vh;
+  background: url("./assets/bg-page2.jpg") center / cover no-repeat;
+  overflow: hidden;
+}
+
+
+#page-2 .link-navigation{
+  position: absolute;
+  inset: 0;
+  pointer-events: none; 
+}
+
+
+#page-2 .link-navigation a{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3rem;
+  color: #fff;
+  text-decoration: none;
+  pointer-events: auto; 
+}
+
+
+#page-2 .link-navigation a:first-child{
+  top: 30px;
+}
+
+
+#page-2 .link-navigation a:last-child{
+  bottom: 30px;
+}
+
+#page-2 .link-navigation a:hover{
+  color: yellow;            
+  transform: translateX(-50%) scale(1.1);
+}
+
+
+.sad-text{
+  position: absolute;
+  top: 52%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  font-size: 1.8rem;
+  color: white;
+  text-align: center;
+  opacity: 1;
+  z-index: 6;
+  text-shadow: 2px 2px 4px #000;
+}
+
+
+#pg-2{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+
+.naruto-scale{
+  position: absolute;
+  top: 270px;
+  left: 570px;
+  width: 60%;
+  height: auto;
+  z-index: 5;
+  pointer-events: none;
+  transform-origin: 50% 85%;
+  animation: narutoScale 3.5s ease-in-out infinite;
+}
+
+
+@keyframes narutoScale {
+  0%   { 
+    transform: scale(1);
+   }
+  50%  { 
+    transform: scale(1.03); 
+  }
+  100% { 
+    transform: scale(1);
+   }
+}
+
+
+#sadness-effect{
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+/* Page 3 Peur */
+
+#page-3 {
+  position: relative;
+  min-height: 100vh;
+  background: black;
+  overflow: hidden;
+}
+
+
+#pg-3{
+  width: 800px;
+  height: 200px;
+  display: block;
+  margin: 200px auto 0;
+  z-index: 1;
+  background: transparent;
+}
+
+
+.red-ball {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: red;
+  left: calc(50% - 400px + 20px);
+  top: 509px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.text-peur{
+  font-size: 2rem;
+  text-align: center;
+  align-items: center;
+  position: absolute;
+  top: 340px;
+}
+
+
+
+#reveal {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  opacity: 0;
+  transition: opacity 0.4s ease;
+
+  z-index: 10;
+  pointer-events: none;
+}
+
+#reveal.show {
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
